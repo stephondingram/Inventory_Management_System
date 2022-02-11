@@ -6,4 +6,5 @@
     Optimize Inventory Levels through recommendations
     Analyze Inventory across dimensions
     Track inventory in connection with existing Salesforce processes, or without
+    Visual Inventory
 
