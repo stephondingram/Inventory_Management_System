@@ -1,4 +1,4 @@
-# Inventory_Management_System, a Salesforce Project
+# Inventory Management System, a Salesforce Project
 
 ## Use Cases
     Track Inventory in a multidimensional way
