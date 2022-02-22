@@ -11,7 +11,7 @@
 ## ERD
     https://lucid.app/lucidchart/782f61a9-2bb1-4524-af76-0d95517b0d07/view
 
-### Sprint Antarctica - Objectives ( Feb 11 2022 - Feb 26 2022 )00
+### Sprint Antarctica - Objectives ( Feb 11 2022 - Feb 26 2022 )
     Overall goal: I will implement a basic version of inventory counting in a silo
     - Create a Lightning App for the Inventory System - complete
     - Create a custom page skeleton to handle all inventory interactions - not complete
@@ -20,7 +20,7 @@
     - Create a permission set for this app and the objects - complete
     - Write test classes for logic with 100% coverage - not needed at this time
     - Create a video demo and post on social media so I can be judged by real experts in the field - complete
-        https://youtu.be/ZvB5hMlyqqU
+        [Inventory Management System Ad 1](https://youtu.be/ZvB5hMlyqqU)
 
     - Write a sprint review for myself (everything went swimingly)
     - Plan next sprint objectives
