@@ -11,18 +11,22 @@
 ## ERD
     https://lucid.app/lucidchart/782f61a9-2bb1-4524-af76-0d95517b0d07/view
 
-### Sprint Antarctica - Objectives ( Feb 11 2022 - Feb 26 2022 )
+### Sprint Antarctica - Objectives ( Feb 11 2022 - Feb 26 2022 )00
     Overall goal: I will implement a basic version of inventory counting in a silo
-    - Create a Lightning App for the Inventory System
-    - Create a custom page skeleton to handle all inventory interactions
-    - Create logic to capture inventory acquisition
-    - Create logic needed to update inventory allocations
-    - Create logic to remove inventory with the possibility of reclaiming inventory
-    - Create a permission set for this app and the objects
-    - Write test classes for logic with 100% coverage
-    - Create a video demo and post on social media so I can be judged by real experts in the field
+    - Create a Lightning App for the Inventory System - complete
+    - Create a custom page skeleton to handle all inventory interactions - not complete
+    - Create logic to capture inventory acquisition - complete
+    - Create logic needed to update inventory allocations - partially complete
+    - Create a permission set for this app and the objects - complete
+    - Write test classes for logic with 100% coverage - not needed at this time
+    - Create a video demo and post on social media so I can be judged by real experts in the field - complete
+        https://youtu.be/ZvB5hMlyqqU
 
-    - Write a sprint review for myself because I don't need accountibility (I will greenlight everything)
+    - Write a sprint review for myself (everything went swimingly)
     - Plan next sprint objectives
 
     - If I do not finish everything, give reasons why in documentation, although I will still give myself a pay raise in the form of time off from personal Salesforce projects.
+
+#### User Guide
+
+There is currently no user guide.
