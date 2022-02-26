@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <choices>
+        <name>AddInventory</name>
+        <choiceText>Add inventory to system.</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Add</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ReclaimInventory</name>
+        <choiceText>Reclaim Inventory</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Reclaim</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>RemoveInventory</name>
+        <choiceText>Remove inventory from system.</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Remove</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>TransferInventory</name>
+        <choiceText>Transfer inventory between locations.</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Transfer</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Inventory_Task</name>
+        <label>Inventory Task</label>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Add_Inventory_to_System</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Choose_a_Task</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>AddInventory</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Add Inventory to System</label>
+        </rules>
+        <rules>
+            <name>Transfer_Inventory</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Choose_a_Task</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>TransferInventory</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Inventory_Transfer</targetReference>
+            </connector>
+            <label>Transfer Inventory</label>
+        </rules>
+        <rules>
+            <name>Remove_Inventory</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Choose_a_Task</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RemoveInventory</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Remove Inventory</label>
+        </rules>
+        <rules>
+            <name>Reclaiming_Inventory</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Choose_a_Task</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ReclaimInventory</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Reclaiming Inventory</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Inventory Management Tasks {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Inventory Management Tasks</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>Inventory_Management</name>
+        <label>Inventory Management</label>
+        <locationX>314</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Inventory_Task</targetReference>
+        </connector>
+        <fields>
+            <name>Welcome_Text</name>
+            <fieldText>&lt;p&gt;This is the inventory management tool for users.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Capabilities:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Add inventory to system.&lt;/li&gt;&lt;li&gt;Log inventory transfers between locations&lt;/li&gt;&lt;li&gt;Remove inventory from system&lt;/li&gt;&lt;li&gt;Reclaim inventory &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;See below for known issues and workarounds.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Choose_a_Task</name>
+            <choiceReferences>AddInventory</choiceReferences>
+            <choiceReferences>TransferInventory</choiceReferences>
+            <choiceReferences>RemoveInventory</choiceReferences>
+            <choiceReferences>ReclaimInventory</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Choose a Task:</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>KnownIssuesandWorkarounds</name>
+            <fieldText>&lt;p&gt;Known issues and workarounds:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;issue, issue description, workarounds[]&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Inventory_Management</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>This will be incorporate in full at a later date.</description>
+        <name>Inventory_Transfer</name>
+        <label>Inventory Transfer</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <flowName>Log_An_Inventory_Transfer</flowName>
+    </subflows>
+</Flow>
